@@ -1,5 +1,5 @@
 import assert from 'assert';
-import { calculate_num_of_floors } from "../calculate-steps.mjs";
+import { calculate_num_of_floors, calculate_position } from "../calculate-steps.mjs";
 
 describe('Calculate number of floors traveled', () => {
 
@@ -25,6 +25,21 @@ describe('Calculate number of floors traveled', () => {
         const string = "((((())()(((()(())((((((((())()(((()(())((((( ";
         const answer = calculate_num_of_floors(string);
         assert.equal(answer, 21);
+    })
+})
+
+describe('Calculates the first postion that takes us to the basement `-1`', () => {
+
+    it('the first position leads to the basement', () => {
+        const string = '())';
+        const answer = calculate_position(string);
+        assert.equal(answer, 2);
+    })
+
+    it('The 10th move takes us to the basement', () => {
+        const string = '(()))';
+        const answer = calculate_position(string);
+        assert.equal(answer, 4);
     })
 })
 
