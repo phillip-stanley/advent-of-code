@@ -1,1 +1,1 @@
-from .calculate_floor import calculate_num_of_floors
+from .calculate_floor import calculate_num_of_floors, calculate_position
